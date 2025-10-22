@@ -16,11 +16,12 @@
 
         .container {
             max-width: 900px;
-            margin: 30px auto;
+            margin: 20px auto;
             background: #ffffff;
-            padding: 30px 40px;
+            padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+            width: 90%;
         }
 
         h1, h2 {
@@ -29,25 +30,35 @@
         }
 
         h1 {
-            font-size: 36px;
+            font-size: 2.25em;
+            word-wrap: break-word;
         }
 
-        img{
-            width: 130px;
-            height: 130px;
+        img {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #3498db;
+            display: block;
+            margin: 20px 0;
         }
 
         p {
             margin-bottom: 15px;
+            word-wrap: break-word;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 20px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
+            min-width: 600px;
         }
 
         table, th, td {
@@ -67,11 +78,13 @@
         ul, ol {
             margin-left: 20px;
             margin-bottom: 20px;
+            padding-right: 20px;
         }
 
         a {
             color: #2980b9;
             text-decoration: none;
+            word-wrap: break-word;
         }
 
         a:hover {
@@ -88,14 +101,76 @@
             border-radius: 5px;
         }
 
+        .profile-header {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .profile-header h1 {
+            margin-bottom: 15px;
+        }
+
+        .contact-details {
+            margin-top: 20px;
+        }
+
         .clear {
             clear: both;
         }
-        
-        img{
-            width:150px;
-            height:150px;
-            border-radius: 50%;
+
+        /* Responsive design for smaller screens */
+        @media screen and (max-width: 768px) {
+            .container {
+                margin: 10px auto;
+                padding: 15px;
+                width: 95%;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            img {
+                width: 120px;
+                height: 120px;
+            }
+
+            th, td {
+                padding: 8px;
+                font-size: 0.9em;
+            }
+        }
+
+        /* For mobile devices */
+        @media screen and (max-width: 480px) {
+            .container {
+                margin: 5px auto;
+                padding: 10px;
+                width: 98%;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            img {
+                width: 100px;
+                height: 100px;
+            }
+
+            th, td {
+                padding: 6px;
+                font-size: 0.8em;
+            }
+
+            ul, ol {
+                margin-left: 15px;
+                padding-right: 15px;
+            }
         }
     </style>
 </head>
@@ -103,13 +178,15 @@
     <div class="container">
 
     <!-- Personal Information -->
-    <h1>Piyush Rawat</h1>
-    <img src="https://github.com/bruhpiyush/My-Resume/blob/main/demo_profile.jpg?raw=true" alt="Profile Picture">
-    <p>
-        <strong>Email:</strong> bruhhpiyush@gmail.com <br>
-        <strong>Phone:</strong> +91 885 161 9638 <br>
-        <strong>Address:</strong> New Delhi, India
-    </p>
+    <div class="profile-header">
+        <h1>Piyush Rawat</h1>
+        <img src="images/demo_profile.jfif" alt="Profile Picture">
+        <p class="contact-details">
+            <strong>Email:</strong> bruhhpiyush@gmail.com <br>
+            <strong>Phone:</strong> +91 885 161 9638 <br>
+            <strong>Address:</strong> New Delhi, India
+        </p>
+    </div>
 
     <!-- Career Objective -->
     <h2>Career Objective</h2>
@@ -119,13 +196,14 @@
 
     <!-- Educational Qualification -->
     <h2>Educational Qualification</h2>
-    <table>
-        <tr>
-            <th>Degree</th>
-            <th>Institution</th>
-            <th>Year of Passing</th>
-            <th>Percentage / CGPA</th>
-        </tr>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Degree</th>
+                <th>Institution</th>
+                <th>Year of Passing</th>
+                <th>Percentage / CGPA</th>
+            </tr>
         <tr>
             <td>BCA in AI/DS</td>
             <td>Bennett University</td>
@@ -144,7 +222,8 @@
             <td>2023</td>
             <td>80%</td>
         </tr>
-    </table>
+        </table>
+    </div>
 
     <!-- Technical Skills -->
     <h2>Technical Skills</h2>
@@ -186,6 +265,3 @@
 </div>
 </body>
 </html>
-
-
-
